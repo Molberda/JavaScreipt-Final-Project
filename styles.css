@@ -6,3 +6,9 @@
     text-decoration: none;
     list-style-type: none;
 }
+
+a{
+    font-size: 20px;
+    color: #242424;
+    font-weight: bold;
+}
