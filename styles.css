@@ -7,6 +7,11 @@
     list-style-type: none;
 }
 
+.row{
+    max-width: 1200px;
+    padding: 0 28px;
+}
+
 a{
     font-size: 20px;
     color: #242424;
@@ -32,4 +37,20 @@ HEADER
     width: 100vw;
     opacity: 0.7;
     z-index: -2;
+}
+
+/* 
+
+NAV
+
+*/
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__link--list{
+    display: flex;
 }
