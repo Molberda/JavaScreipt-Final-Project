@@ -12,3 +12,7 @@ a{
     color: #242424;
     font-weight: bold;
 }
+
+.text__orange{
+    color: rgb(255, 132, 0);
+}
