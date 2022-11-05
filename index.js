@@ -1,32 +1,35 @@
 
-async function getData() {
-    const fetchAnime = await fetch("https://api.jikan.moe/v4/anime");
-    const animeData = await fetchAnime.json();
-    return animeData
-}
 
 
 async function renderAnime() {
     const animeHTML = document.querySelector(".anime__container");
     const animes = await getData()
     const anime = animes["data"].map((anime) => {
-       return `<div class="anime__info--container">
-            <figure class="anime__img--wrapper">
-              <img src="${anime.images.jpg.large_image_url}" alt="" class="anime__img">
-            </figure>
-            <h3 class="anime__title">${anime.title}</h3>
-            <div class="anime__rating">
-            ${animeRating(anime.score)}
-            </div>
-            <p class="anime__synopsis">${anime.synopsis}</p>
-            <a href="${anime.url}" class="anime__link" target="_blank">More info about ${anime.title}</a>
-          </div>`
-      }).join('')
-        animeHTML.innerHTML = anime;
+        return `<div class="anime__info--container">
+        <figure class="anime__img--wrapper">
+        <img src="${anime.images.jpg.large_image_url}" alt="" class="anime__img">
+        </figure>
+        <div class= "anime__organizer">
+        <h3 class="anime__title">${anime.title} ${animeYear(anime.year)}<br> <a href="${anime.url}" class="anime__link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
+        <div class="anime__rating">
+        ${animeRating(anime.score)}
+        </div>
+        <p class="anime__synopsis">${anime.synopsis}</p>
+        </div>
+        </div>`
+    }).join('')
+    animeHTML.innerHTML = anime;
     console.log(animes["data"])
 }
 
 renderAnime();
+
+function animeYear (year){
+    if (year === null){
+        return ``
+    }
+    return `(${year})`
+}
 
 
 function animeRating (rating){
@@ -41,4 +44,9 @@ function animeRating (rating){
 }
 
 
+async function getData() {
+    const fetchAnime = await fetch("https://api.jikan.moe/v4/anime");
+    const animeData = await fetchAnime.json();
+    return animeData
+}
 

@@ -207,20 +207,27 @@ ANIME
 .anime__container{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .anime__info--container{
-  width: 250px;
+  width: 400px;
   margin: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  border: 4px solid white;
+  border-radius: 30px;
 }
 
 .anime__img--wrapper{
-  margin-top: 40px;
+  margin-bottom: 20px;
   display: flex;
+  width: fit-content;
   border: 4px solid white;
   border-radius: 20px;
   overflow: hidden;
-  margin-bottom: 8px;
   transition: all 300ms ease;
 }
 
@@ -239,16 +246,26 @@ ANIME
   transition: all 300ms ease;
 }
 
+.anime__organizer{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
 .anime__title{
   color: white;
   font-size: 20px;
+  text-align: center;
+  width: 100%;
 }
 
 .anime__rating{
-  margin: 4px 0;
+  margin: 12px 0;
+  width: 100%;
   color: goldenrod;
   display: flex;
-  justify-content: start;
+  justify-content: center;
 }
 
 .fa-star, .fa-star-half-stroke{
@@ -265,5 +282,5 @@ ANIME
 .anime__link{
   color: white;
   text-decoration: underline;
-  font-size: 12px;
+  font-size: 16px;
 }
