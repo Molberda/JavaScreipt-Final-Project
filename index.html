@@ -42,8 +42,8 @@
         <h1 class="search__title">
           Browse for your <span class="text__orange">Favorite</span> Anime
         </h1>
-        <form action="">
-          <input type="text" placeholder="Search by Name" class="search-bar" />
+        <form action="" onsubmit="renderAnime(title)">
+          <input type="text" placeholder="Search by Name" class="search-bar"/>
           <button type="submit" class="search-button">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
@@ -55,26 +55,6 @@
       <div class="row anime__row">
         <h2 class="anime__results">Search Results :</h2>
         <div class="container anime__container">
-          <!-- <div class="anime__info--container">
-            <figure class="anime__img--wrapper">
-              <img src="https://cdn.myanimelist.net/images/anime/6/73245l.jpg" alt="" class="anime__img">
-            </figure>
-            <h3 class="anime__title">One Piece</h3>
-            <div class="anime__rating">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-regular fa-star-half-stroke"></i>
-            </div>
-            <p class="anime__synopsis">Gol D. Roger was known as the \"Pirate King,\" the strongest and most infamous being to have</p>
-            <a href="https://myanimelist.net/anime/21/One_Piece" class="anime__link" target="_blank">https://myanimelist.net/anime/21/One_Piece</a>
-          </div> -->
         </div>
       </div>
     </section>

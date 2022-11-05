@@ -194,14 +194,15 @@ ANIME
 */
 
 .anime__row{
-  margin-top: 80px;
+  margin-top: 40px;
   flex-direction: column;
 }
 
 .anime__results{
   text-align: center;
-  font-size: 32px;
+  font-size: 38px;
   color: white;
+  margin-bottom: 48px;
 }
 
 .anime__container{
