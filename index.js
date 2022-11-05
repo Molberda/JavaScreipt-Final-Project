@@ -16,16 +16,7 @@ async function renderAnime() {
             </figure>
             <h3 class="anime__title">${anime.title}</h3>
             <div class="anime__rating">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-regular fa-star-half-stroke"></i>
+            ${animeRating(anime.score)}
             </div>
             <p class="anime__synopsis">${anime.synopsis}</p>
             <a href="${anime.url}" class="anime__link" target="_blank">More info about ${anime.title}</a>
@@ -37,6 +28,17 @@ async function renderAnime() {
 
 renderAnime();
 
+
+function animeRating (rating){
+    let ratingHTML = ""
+    for (let i = 0; i < Math.floor(rating); ++i){
+        ratingHTML += '<i class="fa-solid fa-star"></i>'
+    }
+    if (!Number.isInteger(rating)){
+        ratingHTML += '<i class="fa-regular fa-star-half-stroke"></i>'
+    }
+    return ratingHTML
+}
 
 
 

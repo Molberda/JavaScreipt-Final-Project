@@ -245,10 +245,15 @@ ANIME
 }
 
 .anime__rating{
-  margin: 8px 0;
+  margin: 4px 0;
   color: goldenrod;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
+}
+
+.fa-star, .fa-star-half-stroke{
+  font-size: 12px;
+  margin-right: 4px;
 }
 
 .anime__synopsis{
