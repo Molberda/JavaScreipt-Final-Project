@@ -15,8 +15,13 @@ body {
 .row {
   display: flex;
   margin: 0 auto;
+  width: 100%;
   max-width: 1200px;
   padding: 0 28px;
+}
+
+img{
+  width: 100%;
 }
 
 a {
@@ -197,4 +202,63 @@ ANIME
   text-align: center;
   font-size: 32px;
   color: white;
+}
+
+.anime__container{
+  display: flex;
+  justify-content: center;
+}
+
+.anime__info--container{
+  width: 250px;
+  margin: 24px;
+}
+
+.anime__img--wrapper{
+  margin-top: 40px;
+  display: flex;
+  border: 4px solid white;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  transition: all 300ms ease;
+}
+
+.anime__img--wrapper:hover{
+  border: 4px solid rgb(237, 79, 21);
+}
+
+.anime__img--wrapper:hover .anime__img{
+  scale: 1.15;
+}
+
+.anime__img{
+  width: 200px;
+  height: 300px;
+  scale: 1.05;
+  transition: all 300ms ease;
+}
+
+.anime__title{
+  color: white;
+  font-size: 20px;
+}
+
+.anime__rating{
+  margin: 8px 0;
+  color: goldenrod;
+  display: flex;
+  justify-content: space-between;
+}
+
+.anime__synopsis{
+  color: white;
+  font-size: 12px;
+  text-align: justify;
+}
+
+.anime__link{
+  color: white;
+  text-decoration: underline;
+  font-size: 12px;
 }
