@@ -24,7 +24,6 @@ async function renderAnime(title) {
     console.log(animes)
 }
 
-renderAnime('One Piece')
 
 function animeYear (year){
     if (year === null){
