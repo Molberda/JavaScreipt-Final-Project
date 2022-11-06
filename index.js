@@ -58,7 +58,7 @@ async function getData(title) {
     const fetchAnime = await fetch(`https://api.jikan.moe/v4/anime`);
     const animeData = await fetchAnime.json();
     const animeArr = Object.values(animeData['data'])
-    const films = animeArr.find(animeTitle => animeTitle.title === `${title}`)
+    const films = animeArr.find(animeTitle => animeTitle.title.toLowerCase() === `${title.toLowerCase()}`)
     one.push(films)
     return one
 }
