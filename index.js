@@ -1,5 +1,7 @@
+const searchRes = document.querySelector('.anime__results')
+const animeHTML = document.querySelector(".anime__container");
 async function renderAnime(title) {
-    const animeHTML = document.querySelector(".anime__container");
+    searchRes.innerHTML = `<h2 class="anime__results">Search Results For: <span class="text__orange">${title}</span></h2>`
     const animes = await getData(title)
     const anime = animes.map((anime) => {
         return `<div class="anime__info--container">
@@ -17,9 +19,12 @@ async function renderAnime(title) {
     }).join('')
     setTimeout(() => {
         animeHTML.innerHTML = anime;
-    },2000)
+    },000)
+
+    console.log(animes)
 }
-renderAnime();
+
+renderAnime('One Piece')
 
 function animeYear (year){
     if (year === null){
