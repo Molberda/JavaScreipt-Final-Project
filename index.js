@@ -1,10 +1,7 @@
-
-
-
-async function renderAnime() {
+async function renderAnime(title) {
     const animeHTML = document.querySelector(".anime__container");
-    const animes = await getData()
-    const anime = animes["data"].map((anime) => {
+    const animes = await getData(title)
+    const anime = animes.map((anime) => {
         return `<div class="anime__info--container">
         <figure class="anime__img--wrapper">
         <img src="${anime.images.jpg.large_image_url}" alt="" class="anime__img">
@@ -14,13 +11,14 @@ async function renderAnime() {
         <div class="anime__rating">
         ${animeRating(anime.score)}${ratingremainder(anime.score)}
         </div>
-        <p class="anime__synopsis">${anime.synopsis}</p>
+        <p class="anime__synopsis"><b>Synopsis:</b> <br> ${anime.synopsis}</p>
         </div>
         </div>`
     }).join('')
-    animeHTML.innerHTML = anime;
+    setTimeout(() => {
+        animeHTML.innerHTML = anime;
+    },2000)
 }
-
 renderAnime();
 
 function animeYear (year){
@@ -51,10 +49,14 @@ function ratingremainder (rating){
     return ratingHTML10
 }
 
-async function getData() {
+async function getData(title) {
+    let one = []
     const fetchAnime = await fetch(`https://api.jikan.moe/v4/anime`);
     const animeData = await fetchAnime.json();
-    return animeData
+    const animeArr = Object.values(animeData['data'])
+    const films = animeArr.find(animeTitle => animeTitle.title === `${title}`)
+    one.push(films)
+    return one
 }
 
 // https://api.jikan.moe/v4/anime

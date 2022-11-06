@@ -42,9 +42,9 @@
         <h1 class="search__title">
           Browse for your <span class="text__orange">Favorite</span> Anime
         </h1>
-        <form action="" onsubmit="renderAnime(title)">
-          <input type="text" placeholder="Search by Name" class="search-bar"/>
-          <button type="submit" class="search-button">
+        <form>
+          <input id="anime__name" type="text" placeholder="Search by Name" class="search-bar"/>
+          <button type="submit" class="search-button" onclick="renderAnime(document.getElementById('anime__name').value)">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
