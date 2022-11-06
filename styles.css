@@ -171,6 +171,15 @@ form {
   border: 2px solid #242424;
   border-radius: 20px;
   font-size: 18px;
+  transition: all 300ms ease;
+  outline: none;
+}
+
+.search-bar:hover {
+ border-color:  rgb(232, 154, 126);
+}
+.search-bar:focus {
+ border-color:  rgb(237, 79, 21);
 }
 
 .search-button {
@@ -278,6 +287,11 @@ ANIME
   color: white;
   font-size: 12px;
   text-align: justify;
+}
+
+.synopsis__title{
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .anime__link{

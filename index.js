@@ -1,5 +1,7 @@
 const searchRes = document.querySelector('.anime__results')
 const animeHTML = document.querySelector(".anime__container");
+
+
 async function renderAnime(title) {
     searchRes.innerHTML = `<h2 class="anime__results">Search Results For: <span class="text__orange">${title}</span></h2>`
     const animes = await getData(title)
@@ -13,15 +15,13 @@ async function renderAnime(title) {
         <div class="anime__rating">
         ${animeRating(anime.score)}${ratingremainder(anime.score)}
         </div>
-        <p class="anime__synopsis"><b>Synopsis:</b> <br> ${anime.synopsis}</p>
+        <p class="anime__synopsis"> <span class="synopsis__title">Synopsis:</span> <br> <br>${anime.synopsis}</p>
         </div>
         </div>`
     }).join('')
     setTimeout(() => {
         animeHTML.innerHTML = anime;
-    },000)
-
-    console.log(animes)
+    },1000)
 }
 
 
