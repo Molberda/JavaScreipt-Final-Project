@@ -3,7 +3,6 @@ const animeHTML = document.querySelector(".anime__container");
 
 
 async function renderAnime(title) {
-    searchRes.innerHTML = `<h2 class="anime__results">Search Results For: <span class="text__orange">${title.replace(/(?<= )[^\s]|^./g, a => a.toUpperCase())}</span></h2>`
     const animes = await getData(title)
     const anime = animes.map((anime) => {
         return `<div class="anime__info--container">
@@ -20,6 +19,7 @@ async function renderAnime(title) {
         </div>`
     }).join('')
     setTimeout(() => {
+        searchRes.innerHTML = `<h2 class="anime__results">Search Results For: <br> <br> <span class="text__orange">${title.replace(/(?<= )[^\s]|^./g, a => a.toUpperCase())}</span></h2>`
         animeHTML.innerHTML = anime;
     },1000)
 }
@@ -58,14 +58,11 @@ async function getData(title) {
     const animeData = await fetchAnime.json();
     const animeArr = Object.values(animeData['data'])
     const films = animeArr.filter(animeTitle => {
-        if (animeTitle.title.toLowerCase() === `${title.toLowerCase()}`){
+        if (animeTitle.title.toLowerCase() == `${title.toLowerCase()}`){
             return true
         }
     })
-    console.log(films)
     return films
 }
-
-renderAnime('one piece')
 
 // https://api.jikan.moe/v4/anime
