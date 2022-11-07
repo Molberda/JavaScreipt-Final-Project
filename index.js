@@ -22,7 +22,7 @@ async function renderAnime(title) {
     setTimeout(() => {
         searchRes.innerHTML = `<h2 class="anime__results">Search Results For: <br> <br> <span class="text__orange">${title.replace(/(?<= )[^\s]|^./g, a => a.toUpperCase())}</span></h2>`
         animeHTML.innerHTML = anime;
-    }, 1500);
+    }, 1000);
 }
 
 function animeYear (year){
