@@ -27,7 +27,7 @@ const animeHTML = document.querySelector(".anime__container");
 async function renderAnime(title) {
     searchRes.innerHTML = `<h2 class="anime__results">Search Results For: <br> <br> <span class="text__orange">${title.replace(/(?<= )[^\s]|^./g, a => a.toUpperCase())}</span></h2>`
     const animes = await getData(title)
-    console.log(animes["data"])
+    animes["data"].sort((a, b) => (b.score) - (a.score))
     const anime = animes["data"].map((anime) => {
         return `<div class="anime__info--container">
         <figure class="anime__img--wrapper">
@@ -62,6 +62,9 @@ function animeRating (rating){
     }
     if (!Number.isInteger(rating)){
         ratingHTML += '<i class="fa-regular fa-star-half-stroke"></i>'
+    }
+    if (rating === null){
+        return ''
     }
     return ratingHTML
 }
