@@ -23,9 +23,7 @@ const animeHTML = document.querySelector(".anime__container");
 //         animeHTML.innerHTML = anime;
 //     },1000)
 // }
-
 async function renderAnime(title) {
-    searchRes.innerHTML = `<h2 class="anime__results">Search Results For: <br> <br> <span class="text__orange">${title.replace(/(?<= )[^\s]|^./g, a => a.toUpperCase())}</span></h2>`
     const animes = await getData(title)
     animes["data"].sort((a, b) => (b.score) - (a.score))
     const anime = animes["data"].map((anime) => {
@@ -42,9 +40,11 @@ async function renderAnime(title) {
         </div>
         </div>`
     }).join('')
-    animeHTML.innerHTML = anime;
+    setTimeout(() => {
+        searchRes.innerHTML = `<h2 class="anime__results">Search Results For: <br> <br> <span class="text__orange">${title.replace(/(?<= )[^\s]|^./g, a => a.toUpperCase())}</span></h2>`
+        animeHTML.innerHTML = anime;
+    }, 1000);
 }
-
 
 function animeYear (year){
     if (year === null){
@@ -91,7 +91,7 @@ function ratingremainder (rating){
 async function getData(title) {
     const fetchAnime = await fetch(`https://api.jikan.moe/v4/anime?q=${title}`);
     const animeData = await fetchAnime.json();
-    return animeData
+        return animeData
 }
 
 // https://api.jikan.moe/v4/anime

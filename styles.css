@@ -217,6 +217,7 @@ ANIME
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .anime__info--container{
@@ -298,4 +299,15 @@ ANIME
   color: white;
   text-decoration: underline;
   font-size: 16px;
+}
+
+/* 
+
+LOADING
+
+*/
+
+.fa-spinner{
+  font-size: 140px;
+  color: rgb(237, 79, 21);
 }

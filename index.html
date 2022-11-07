@@ -42,7 +42,7 @@
         <h1 class="search__title">
           Browse for your <span class="text__orange">Favorite</span> Anime
         </h1>
-        <form>
+        <form id="search" onsubmit="return false">
           <input id="anime__name" type="text" placeholder="Search by Name" class="search-bar"/>
           <button type="submit" class="search-button" onclick="renderAnime(document.getElementById('anime__name').value)">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -55,6 +55,7 @@
       <div class="row anime__row">
         <h2 class="anime__results"></h2>
         <div class="container anime__container">
+          <i class="fa-solid fa-spinner"></i>
         </div>
       </div>
     </section>
