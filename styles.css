@@ -308,6 +308,16 @@ LOADING
 */
 
 .fa-spinner{
+  position: absolute;
+  bottom: -400px;
   font-size: 140px;
   color: rgb(237, 79, 21);
+  animation: spin 1000ms infinite linear;
+}
+
+@keyframes spin{
+  0%{}
+  100%{
+    rotate: 360deg;
+  }
 }
