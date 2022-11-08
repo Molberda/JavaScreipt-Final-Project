@@ -1,6 +1,22 @@
 const searchRes = document.querySelector('.anime__results')
 const animeHTML = document.querySelector(".anime__container");
 
+
+
+const scaleFactor = 1 / 12
+function moveBackground(event){
+    const shapes = document.querySelectorAll('.shapes')
+    const x = event.clientX * scaleFactor
+    const y = event.clientY * scaleFactor
+    const rot = event.clientX / 3
+
+    for (let i = 0; i < shapes.length; ++i){
+        const isOdd = i % 2 !== 0
+        const boolInt = isOdd ? -1 : 1
+        shapes[i].style.transform = `translate(${x * boolInt}px, ${y * boolInt}px) rotate(${rot}deg)`
+    }
+}
+
 async function renderAnime(title) {
     animeHTML.innerHTML = '<i class="fa-solid fa-spinner"></i>'
     const animes = await getData(title)
@@ -15,7 +31,6 @@ async function renderAnime(title) {
         <div class="anime__rating">
         ${animeRating(anime.score)}${ratingremainder(anime.score)}
         </div>
-        <p class="anime__synopsis"> <span class="synopsis__title">Synopsis:</span> <br> <br>${anime.synopsis}</p>
         </div>
         </div>`
     }).join('')
@@ -63,3 +78,5 @@ async function getData(title) {
 }
 
 // https://api.jikan.moe/v4/anime
+
+
