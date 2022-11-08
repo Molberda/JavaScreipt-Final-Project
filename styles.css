@@ -202,6 +202,10 @@ ANIME
 
 */
 
+#anime{
+  position: relative;
+}
+
 .anime__row{
   margin-top: 40px;
   flex-direction: column;
@@ -320,4 +324,55 @@ LOADING
   100%{
     rotate: 360deg;
   }
+}
+
+/* 
+
+SHAPES
+
+*/
+
+.shape__wrapper{
+  position: fixed;
+  width: 50px;
+  z-index: -2;
+  filter: invert(1);
+  opacity: .3;
+}
+
+.shape__wrapper--0{
+  top: 15vh;
+  left:15vw;
+}
+.shape__wrapper--1{
+  top: 15vh;
+  left: 45vw;
+}
+.shape__wrapper--2{
+  top: 15vh;
+  left: 80vw;
+}
+.shape__wrapper--3{
+  top: 50vh;
+  left:15vw;
+}
+.shape__wrapper--4{
+  top: 50vh;
+  left: 45vw;
+}
+.shape__wrapper--5{
+  top: 50vh;
+  left: 80vw;
+}
+.shape__wrapper--6{
+  top: 80vh;
+  left: 15vw;
+}
+.shape__wrapper--7{
+  top: 80vh;
+  left: 45vw;
+}
+.shape__wrapper--8{
+  top: 80vh;
+  left: 80vw;
 }
