@@ -21,7 +21,7 @@ async function renderAnime(title) {
     animeHTML.innerHTML = '<i class="fa-solid fa-spinner"></i>'
     const animes = await getData(title)
     animes["data"].sort((a, b) => (b.score) - (a.score))
-    const anime = animes["data"].map((anime) => {
+    const anime = animes["data"].slice(0, 8).map((anime) => {
         return `<div class="anime__info--container">
         <figure class="anime__img--wrapper">
         <img src="${anime.images.jpg.large_image_url}" alt="" class="anime__img">
@@ -73,8 +73,8 @@ function ratingremainder (rating){
 }
 
 async function getData(title) {
-    const fetchAnime = await fetch(`https://api.jikan.moe/v4/anime?q=${title}`);
-    const animeData = await fetchAnime.json();
+    const fetchAnime = await fetch(`https://api.jikan.moe/v4/anime?q=${title}`)
+    const animeData = await fetchAnime.json()
         return animeData
 }
 
