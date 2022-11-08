@@ -25,6 +25,7 @@ async function renderAnime(title) {
         return `<div class="anime__info--container">
         <figure class="anime__img--wrapper">
         <img src="${anime.images.jpg.large_image_url}" alt="" class="anime__img">
+        <a href="${anime.url}" class="img__link" target="_blank"></a>
         </figure>
         <div class= "anime__organizer">
         <h3 class="anime__title">${anime.title} ${animeYear(anime.year)}<br> <a href="${anime.url}" class="anime__link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
