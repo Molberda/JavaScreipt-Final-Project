@@ -355,7 +355,7 @@ SHAPES
   width: 50px;
   z-index: 0;
   filter: invert(1);
-  opacity: .3;
+  opacity: .7;
 }
 
 .shape__wrapper--0{
