@@ -26,7 +26,7 @@ img{
 }
 
 a {
-  font-size: 18px;
+  font-size: 22px;
   color: black;
   font-weight: bold;
 }
@@ -98,18 +98,22 @@ nav {
 
 .nav__link-hover-effect {
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   right: 0;
   width: 0;
-  height: 3px;
+  height: 4px;
   border-radius: 3px;
   background-color: #242424;
   transition: left 300ms, width 300ms, border 0ms ease;
 }
 
 .nav__link {
-  -webkit-text-stroke-width: .5px;
-  -webkit-text-stroke-color: rgba(255, 255, 255, 0.771);
+  -webkit-text-stroke-width: .3px;
+  -webkit-text-stroke-color: rgb(255, 255, 255);
+}
+
+.nav__link:hover {
+  cursor: not-allowed;
 }
 
 .nav__button {
