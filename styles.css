@@ -140,7 +140,6 @@ HEADER
 
 .banner {
   position: relative;
-  height: 30vh;
   z-index: 2;
 }
 
@@ -160,7 +159,7 @@ HEADER
 
 .header__img {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 2000px;
@@ -503,6 +502,10 @@ MEDIA QUERIES
 
 @media (max-width: 700px){
 
+  .header{
+    height: 100px;
+  }
+
   .banner__row{
     justify-content: start;
   }
@@ -522,6 +525,10 @@ MEDIA QUERIES
   .search__title{
     margin: 0;
     font-size: 30px;
+  }
+
+  #search{
+    margin-top: 16px;
   }
 
   .anime__results{
