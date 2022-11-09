@@ -504,4 +504,8 @@ MEDIA QUERIES
   .footer__list--item {
     margin: 0 8px;
   }
+
+  .shapes{
+    display: none;
+  }
 }
