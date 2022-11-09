@@ -16,6 +16,7 @@ body {
 .row {
   display: flex;
   margin: 0 auto;
+  height: 100%;
   width: 100%;
   max-width: 1400px;
   padding: 0 28px;
@@ -501,8 +502,38 @@ MEDIA QUERIES
 */
 
 @media (max-width: 700px){
+
+  .banner__row{
+    justify-content: start;
+  }
+
+  .header__img{
+    height: 100%;
+  }
+
+  .nav__logo--wrapper{
+    scale: .7;
+  }
+
+  .nav__link--list{
+    display: none;
+  }
+
+  .search__title{
+    margin: 0;
+    font-size: 30px;
+  }
+
+  .anime__results{
+    font-size: 28px;
+  }
+  
   .footer__list--item {
     margin: 0 8px;
+  }
+
+  .footer__logo--wrapper{
+    scale: .6;
   }
 
   .shapes{
