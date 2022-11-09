@@ -415,6 +415,8 @@ FOOTER
 footer {
   height: 20vh;
   background-color: #242424;
+  border-top: 4px solid;
+  border-top-color: white;
   position: relative;
   z-index: 2;
 }
