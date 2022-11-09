@@ -8,6 +8,7 @@
 }
 
 body {
+  max-width: 100vw;
   overflow-x: hidden;
   background-color: #242424;
 }
@@ -490,3 +491,12 @@ footer {
   color: rgba(255, 255, 255, 0.537);
   font-size: 12px;
 }
+
+
+/* 
+
+MEDIA QUERIES
+
+*/
+
+@media (max-width: )
